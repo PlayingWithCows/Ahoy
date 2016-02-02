@@ -19,4 +19,10 @@ public class Player : NetworkBehaviour {
 		transform.Translate(new Vector3(CrossPlatformInputManager.GetAxis("Horizontal")*movespeed*Time.deltaTime,0f,CrossPlatformInputManager.GetAxis("Vertical")*movespeed*Time.deltaTime));
 
 	}
+
+	public override void OnStartLocalPlayer(){
+		
+		GetComponentInChildren<Camera>().enabled = true;
+	
+	}
 }
