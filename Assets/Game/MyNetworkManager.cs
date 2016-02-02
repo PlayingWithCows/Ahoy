@@ -23,4 +23,13 @@ public class MyNetworkManager : NetworkManager {
 	public override void OnStartHost(){
 		Debug.Log ("Server Started at: " + System.DateTime.Now);
 	}
+
+	public override void OnStartClient(NetworkClient myclient){
+		Debug.Log ("Client '"+myclient+"' was started at: " + System.DateTime.Now);
+		
+	}
+
+	public override void OnClientConnect(NetworkConnection conn){
+		Debug.Log ("Client has connected to '" + conn.address + "'at: " + System.DateTime.Now);
+	}
 }
